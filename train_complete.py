@@ -182,9 +182,8 @@ def run_5fold_cv_with_staged_training(config, paths):
 
         # Initialize model
         model = UNetWithDualHeads(
-            n_channels=config["IN_CHANNELS"],
-            n_classes=len(config["STRUCTURE_LABELS"]),
-            bilinear_unet=config.get("BILINEAR_UNET", True)
+            in_channels=config["IN_CHANNELS"],
+            feat_channels=64
         ).to(device)
 
         # Stage 1: Heatmap regression training
