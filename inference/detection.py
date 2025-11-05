@@ -23,7 +23,7 @@ from inference.tta import apply_tta_horizontal_flip
 from utils.gating import four_structure_and_gate_check
 from utils.logging_utils import log_message
 from utils.msp_utils import get_msp_index
-from data.io import load_nifti_data_cached
+from data import load_nifti_data_cached
 
 
 def combine_slice_probability(cov_logits: torch.Tensor, alpha: float = 0.5) -> torch.Tensor:
